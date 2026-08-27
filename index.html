@@ -8,13 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header>
             <h1>💖 ZIA'S ASSET UPLOADER</h1>
-            <p>Upload sounds &amp; images — get your Roblox Asset ID instantly!</p>
+            <p>Upload to Roblox &amp; get your Asset ID instantly!</p>
         </header>
 
-        <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="sound">🎵 Sound</button>
             <button class="tab-btn" data-tab="image">🖼️ Image</button>
@@ -34,7 +32,43 @@
                     <h3>✅ Upload Successful!</h3>
                     <p>Asset ID: <span id="soundId">1234567890</span></p>
                     <button class="copy-btn" onclick="copyId('soundId')">📋 Copy ID</button>
-                    <p class="usage">Use in Studio Lite: <code>rbxassetid://<span id="soundIdDisplay">1234567890</span></code></p>
+                    <div class="preview-box">
+                        <p>🔊 <span id="soundPreview">Click play to preview</span></p>
+                        <audio controls id="soundPlayer" style="display:none;"></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="tab-content" id="image">
+            <div class="upload-area" id="imageDrop">
+                <div class="upload-icon">🖼️</div>
+                <p>Drop your image file here</p>
+                <p class="sub-text">PNG, JPG, JPEG, GIF • Max 10MB</p>
+                <button class="upload-btn" id="imageBtn">Choose File</button>
+                <input type="file" id="imageInput" accept=".png,.jpg,.jpeg,.gif" hidden />
+            </div>
+            <div id="imageResult" class="result hidden">
+                <div class="result-card">
+                    <h3>✅ Upload Successful!</h3>
+                    <p>Asset ID: <span id="imageId">1234567890</span></p>
+                    <button class="copy-btn" onclick="copyId('imageId')">📋 Copy ID</button>
+                    <div class="preview-box">
+                        <img id="imagePreview" src="" alt="Preview" style="max-width:100%;max-height:200px;border-radius:8px;display:none;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>💖 Made with love by ZIA | Studio Lite Compatible</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>                    <p class="usage">Use in Studio Lite: <code>rbxassetid://<span id="soundIdDisplay">1234567890</span></code></p>
                 </div>
             </div>
         </div>
