@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>💖 ZIA'S ASSET UPLOADER</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>💖 ZIA'S ASSET UPLOADER</h1>
+            <p>Upload sounds &amp; images — get your Roblox Asset ID instantly!</p>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="sound">🎵 Sound</button>
+            <button class="tab-btn" data-tab="image">🖼️ Image</button>
+        </div>
+
+        <!-- Sound Upload -->
+        <div class="tab-content active" id="sound">
+            <div class="upload-area" id="soundDrop">
+                <div class="upload-icon">🎵</div>
+                <p>Drop your audio file here</p>
+                <p class="sub-text">MP3, OGG, WAV, FLAC • Max 20MB</p>
+                <button class="upload-btn" id="soundBtn">Choose File</button>
+                <input type="file" id="soundInput" accept=".mp3,.ogg,.wav,.flac" hidden />
+            </div>
+            <div id="soundResult" class="result hidden">
+                <div class="result-card">
+                    <h3>✅ Upload Successful!</h3>
+                    <p>Asset ID: <span id="soundId">1234567890</span></p>
+                    <button class="copy-btn" onclick="copyId('soundId')">📋 Copy ID</button>
+                    <p class="usage">Use in Studio Lite: <code>rbxassetid://<span id="soundIdDisplay">1234567890</span></code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="tab-content" id="image">
+            <div class="upload-area" id="imageDrop">
+                <div class="upload-icon">🖼️</div>
+                <p>Drop your image file here</p>
+                <p class="sub-text">PNG, JPG, JPEG, GIF • Max 10MB</p>
+                <button class="upload-btn" id="imageBtn">Choose File</button>
+                <input type="file" id="imageInput" accept=".png,.jpg,.jpeg,.gif" hidden />
+            </div>
+            <div id="imageResult" class="result hidden">
+                <div class="result-card">
+                    <h3>✅ Upload Successful!</h3>
+                    <p>Asset ID: <span id="imageId">1234567890</span></p>
+                    <button class="copy-btn" onclick="copyId('imageId')">📋 Copy ID</button>
+                    <p class="usage">Use in Studio Lite: <code>rbxassetid://<span id="imageIdDisplay">1234567890</span></code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>💖 Made with love by ZIA | Studio Lite Compatible</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
